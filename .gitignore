@@ -30,3 +30,4 @@ override.tf.json
 
 /.idea/
 .DS_Store
+!terraform.tmpl.tfvars
