@@ -1,0 +1,5 @@
+export SNOWFLAKE_USER="user"
+export SNOWFLAKE_ACCOUNT="company"
+export SNOWFLAKE_REGION="us-west-2"
+export SNOWFLAKE_ROLE="ACCOUNTADMIN"
+export SNOWFLAKE_PRIVATE_KEY_PATH="/path/to/key"
