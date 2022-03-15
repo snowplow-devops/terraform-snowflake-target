@@ -7,7 +7,7 @@ resource "snowflake_database" "loader" {
   count = var.is_create_database ? 1 : 0
 
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 
   name = local.db_name
@@ -15,7 +15,7 @@ resource "snowflake_database" "loader" {
 
 resource "snowflake_schema" "atomic" {
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 
   database = local.database

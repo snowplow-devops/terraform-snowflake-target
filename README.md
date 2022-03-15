@@ -2,20 +2,7 @@
 
 # terraform-snowflake-target
 
-A Terraform module for preparing Snowflake destination for loading Snowplow data.
-
-## Prerequisites
-
-Authentication for the service user is required for the snowflake terraform provider
-[follow this tutorial][snowflake-service-user-tutorial] to obtain snowflake connection details:
-
-| Parameter | Description |
-|------|---------|
-| account | The account name. |
-| username | A snowflake user to perform resource creation.|
-| region | Region for the snowflake deployment. |
-| role | Needs to be ACCOUNTADMIN or similar. |
-| private_key_path | Path the private key. |
+A Terraform module for configuring a base Snowflake Target integration for use with Snowplow systems.
 
 ## Usage
 
@@ -42,13 +29,12 @@ provider "snowflake" {
 }
 
 module "snowflake_setup" {
-  source = "snowplow-devops/terraform-aws-snowflake-loader-setup"
+  source = "snowplow-devops/snowflake-loader-setup/aws"
    
   name                      = "snowplow"
-  snowflake_loader_password = "example_password"
+  snowflake_loader_password = "exampleP@ssword1"
 }
 ```
-> [snowflake](#requirement\_snowflake) | 0.25.32 |
 
 ## Providers
 
@@ -95,18 +81,16 @@ No modules.
 
 # Copyright and license
 
-The Terraform Snowflake Loader Setup project is Copyright 2022-2022 Snowplow Analytics Ltd.
+The Terraform Snowflake Target project is Copyright 2022-2022 Snowplow Analytics Ltd.
 
-Licensed under the [Apache License, Version 2.0][license] (the "License"); you may not use this software except in
-compliance with the License.
+Licensed under the [Apache License, Version 2.0][license] (the "License");
+you may not use this software except in compliance with the License.
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "
-AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific
-language governing permissions and limitations under the License.
-
-[snowflake-service-user-tutorial]: https://quickstarts.snowflake.com/guide/terraforming_snowflake/index.html?index=..%2F..index#2
-
-[snowflake-env-vars]: https://quickstarts.snowflake.com/guide/terraforming_snowflake/index.html?index=..%2F..index#3
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 [release]: https://github.com/snowplow-devops/terraform-snowflake-target/releases/latest
 [release-image]: https://img.shields.io/github/v/release/snowplow-devops/terraform-snowflake-target
