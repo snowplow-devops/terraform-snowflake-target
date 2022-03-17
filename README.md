@@ -99,6 +99,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+[snowflake-env-vars]: https://quickstarts.snowflake.com/guide/terraforming_snowflake/index.html?index=..%2F..index#3
+
 [release]: https://github.com/snowplow-devops/terraform-snowflake-target/releases/latest
 [release-image]: https://img.shields.io/github/v/release/snowplow-devops/terraform-snowflake-target
 
