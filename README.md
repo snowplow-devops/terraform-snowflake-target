@@ -8,10 +8,8 @@ A Terraform module for configuring a base Snowflake Target integration for use w
 
 ### Applying module directly
 
-1. Fill variables in [terraform.tmpl.tfvars](terraform.tmpl.tfvars) and copy it to `terraform.tfvars`.
-2. Using environment variables for authentication as [described in here][snowflake-env-vars]. Fill the template
-   in [snowflake_provider_vars.sh](snowflake_provider_vars.sh) and run
-   `source ./snowflake_provider_vars.sh` to set up your local environment.
+1. Fill variables in [terraform.tfvars.tmpl](terraform.tfvars.tmpl) and copy it to `terraform.tfvars`.
+2. Using environment variables for authentication as [described in here][snowflake-env-vars]. Fill the template in [snowflake_provider_vars.sh](snowflake_provider_vars.sh) and run `source ./snowflake_provider_vars.sh` to set up your local environment.
 3. Run `terraform init`
 4. Run `terraform apply`
 
@@ -28,13 +26,20 @@ provider "snowflake" {
   private_key_path = "/path/to/private/key"
 }
 
-module "snowflake_setup" {
-  source = "snowplow-devops/snowflake-loader-setup/aws"
+module "snowflake_target" {
+  source = "snowplow-devops/target/snowflake"
    
-  name                      = "snowplow"
-  snowflake_loader_password = "exampleP@ssword1"
+  name               = "snowplow"
+  snowflake_password = "exampleP@ssword1"
 }
 ```
+
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_snowflake"></a> [snowflake](#requirement\_snowflake) | 0.25.32 |
 
 ## Providers
 
@@ -63,7 +68,8 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | A name which will be prepended to the created resources | `string` | n/a | yes |
 | <a name="input_snowflake_password"></a> [snowflake\_password](#input\_snowflake\_password) | The password to use to connect to the database | `string` | n/a | yes |
 | <a name="input_is_create_database"></a> [is\_create\_database](#input\_is\_create\_database) | Should database be created. Set to false, to use an existing one | `bool` | `true` | no |
-| <a name="input_override_snowflake_db_name"></a> [override\_snowflake\_db\_name](#input\_override\_snowflake\_db\_name) | Override database name. If not set it will be defaulted to uppercase var.name with "\_DATABASE" suffix | `string` | `""` | no |
+| <a name="input_override_snowflake_database"></a> [override\_snowflake\_database](#input\_override\_snowflake\_database) | Override database name. If not set it will be defaulted to uppercase var.name with "\_DATABASE" suffix | `string` | `""` | no |
+| <a name="input_override_snowflake_user"></a> [override\_snowflake\_user](#input\_override\_snowflake\_user) | Override snowflake user | `string` | `""` | no |
 | <a name="input_snowflake_file_format_name"></a> [snowflake\_file\_format\_name](#input\_snowflake\_file\_format\_name) | Name of the Snowflake file format which is used by stage | `string` | `"SNOWPLOW_ENRICHED_JSON"` | no |
 | <a name="input_snowflake_schema"></a> [snowflake\_schema](#input\_snowflake\_schema) | Schema name for snowplow data. Defaults to ATOMIC. | `string` | `"ATOMIC"` | no |
 
@@ -77,7 +83,6 @@ No modules.
 | <a name="output_snowflake_password"></a> [snowflake\_password](#output\_snowflake\_password) | Password for snowflake\_user |
 | <a name="output_snowflake_schema"></a> [snowflake\_schema](#output\_snowflake\_schema) | Snowflake schema name |
 | <a name="output_snowflake_user"></a> [snowflake\_user](#output\_snowflake\_user) | Snowflake username |
-
 
 # Copyright and license
 
