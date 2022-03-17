@@ -9,7 +9,9 @@ A Terraform module for configuring a base Snowflake Target integration for use w
 ### Applying module directly
 
 1. Fill variables in [terraform.tfvars.tmpl](terraform.tfvars.tmpl) and copy it to `terraform.tfvars`.
-2. Using environment variables for authentication as [described in here][snowflake-env-vars]. Fill the template in [snowflake_provider_vars.sh](snowflake_provider_vars.sh) and run `source ./snowflake_provider_vars.sh` to set up your local environment.
+2. Using environment variables for authentication as [described in here][snowflake-env-vars]. Fill the template
+   in [snowflake_provider_vars.sh](snowflake_provider_vars.sh) and run
+   `source ./snowflake_provider_vars.sh` to set up your local environment.
 3. Run `terraform init`
 4. Run `terraform apply`
 
