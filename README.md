@@ -39,13 +39,13 @@ module "snowflake_target" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
-| <a name="requirement_snowflake"></a> [snowflake](#requirement\_snowflake) | 0.25.32 |
+| <a name="requirement_snowflake"></a> [snowflake](#requirement\_snowflake) | >= 0.45.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_snowflake"></a> [snowflake](#provider\_snowflake) | 0.25.32 |
+| <a name="provider_snowflake"></a> [snowflake](#provider\_snowflake) | >= 0.45.0 |
 
 ## Modules
 
@@ -55,11 +55,11 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [snowflake_database.loader](https://registry.terraform.io/providers/chanzuckerberg/snowflake/0.25.32/docs/resources/database) | resource |
-| [snowflake_file_format.enriched](https://registry.terraform.io/providers/chanzuckerberg/snowflake/0.25.32/docs/resources/file_format) | resource |
-| [snowflake_schema.atomic](https://registry.terraform.io/providers/chanzuckerberg/snowflake/0.25.32/docs/resources/schema) | resource |
-| [snowflake_table.events](https://registry.terraform.io/providers/chanzuckerberg/snowflake/0.25.32/docs/resources/table) | resource |
-| [snowflake_user.loader](https://registry.terraform.io/providers/chanzuckerberg/snowflake/0.25.32/docs/resources/user) | resource |
+| [snowflake_database.loader](https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs/resources/database) | resource |
+| [snowflake_file_format.enriched](https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs/resources/file_format) | resource |
+| [snowflake_schema.atomic](https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs/resources/schema) | resource |
+| [snowflake_table.events](https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs/resources/table) | resource |
+| [snowflake_user.loader](https://registry.terraform.io/providers/Snowflake-Labs/snowflake/latest/docs/resources/user) | resource |
 
 ## Inputs
 
